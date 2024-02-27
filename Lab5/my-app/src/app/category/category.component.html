@@ -1,0 +1,9 @@
+<h2>Каталог</h2>
+<ul>
+    <ng-container *ngFor="let category of categories">
+        <label>
+            <input type="checkbox" [checked]="isSelected(category.id)" (change)="toggleCategory(category.id)">
+            {{ category.name }}
+        </label>
+    </ng-container>
+</ul>

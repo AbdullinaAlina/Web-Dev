@@ -1,0 +1,33 @@
+<h2>Товары</h2>
+
+<div *ngFor="let product of products">
+  <div *ngIf="isProductInSelectedCategories(product)">
+
+    <h3>
+      <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+        {{ product.name }}
+      </a>
+    </h3>
+
+    <img src="{{product.image}}">
+    <div class="rating">
+      <h4>Рейтинг: {{ product.rating }}</h4>
+      <img class="rating__star" src="../assets/star.svg">
+    </div>
+
+    <p *ngIf="product.description" style="width: 500px;">
+      Описание: {{ product.description }}
+    </p>
+
+    <button type="button" (click)="share(product)">
+      Поделиться
+    </button>
+
+    <a href="{{ product.href }}" style="margin: 50px;">Открыть в Kaspi.kz</a>
+
+
+    <app-product-alerts [product]="product" (notify)="onNotify()">
+    </app-product-alerts>
+
+  </div>
+</div>
