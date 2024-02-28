@@ -1,5 +1,5 @@
 <h2>Товары</h2>
-
+<p>Избранное: {{ likedProductCount }}</p>
 <div *ngFor="let product of products">
   <div *ngIf="isProductInSelectedCategories(product)">
 
@@ -10,24 +10,29 @@
     </h3>
 
     <img src="{{product.image}}">
-    <div class="rating">
+    <div class="rating" style="height: 24px;">
       <h4>Рейтинг: {{ product.rating }}</h4>
       <img class="rating__star" src="../assets/star.svg">
     </div>
 
     <p *ngIf="product.description" style="width: 500px;">
-      Описание: {{ product.description }}
+      <strong>Описание: </strong>{{ product.description }}
     </p>
 
     <button type="button" (click)="share(product)">
       Поделиться
     </button>
 
-    <a href="{{ product.href }}" style="margin: 50px;">Открыть в Kaspi.kz</a>
+    <a href="{{ product.href }}" style="margin-left: 24px;">Открыть в Kaspi.kz</a>
 
 
     <app-product-alerts [product]="product" (notify)="onNotify()">
     </app-product-alerts>
+    <input type="checkbox" (change)="toggleFavorite(product)">Избранное
+    <button type="button" (click)="removeProduct(product)">
+      Удалить
+    </button>
+
 
   </div>
 </div>

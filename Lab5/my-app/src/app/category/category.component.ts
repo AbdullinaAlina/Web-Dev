@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { categories, Category } from '../categories';
 
 @Component({
@@ -8,7 +8,9 @@ import { categories, Category } from '../categories';
 })
 export class CategoryComponent {
   categories: Category[] = categories;
-  selectedCategoryIds: number[] = [];
+  @Input() selectedCategoryIds: number[] = [];
+  @Input() likedProductCount: number = 0;
+
 
   isSelected(categoryId: number): boolean {
     return this.selectedCategoryIds.includes(categoryId);

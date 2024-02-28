@@ -2,12 +2,13 @@
 <!-- Inside app.component.html -->
 <!-- parent-component.component.html -->
 
-<app-category (categorySelectionChanged)="onCategorySelectionChanged($event)"></app-category>
-<app-product-list [selectedCategoryIds]="selectedCategoryIds"></app-product-list>
 
 
 <div class="container">
-  <router-outlet></router-outlet>
+  <app-category [selectedCategoryIds]="selectedCategoryIds" [likedProductCount]="likedProductCount">
+  </app-category>
+  <app-product-list [selectedCategoryIds]="selectedCategoryIds"
+    [likedProductCount]="likedProductCount"></app-product-list>
 </div>
 
 <!-- 

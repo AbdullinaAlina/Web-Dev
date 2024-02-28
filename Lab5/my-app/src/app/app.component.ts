@@ -8,7 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   selectedCategoryIds: number[] = []; // Property to hold selected category IDs
+  likedProductCount: number = 0;
 
+  updateLikedProductCount(count: number) {
+    this.likedProductCount += count;
+  }
   // Method to receive selected category IDs from CategoryComponent if needed
   onCategorySelectionChanged(selectedCategoryIds: number[]) {
     this.selectedCategoryIds = selectedCategoryIds;

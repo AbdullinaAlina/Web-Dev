@@ -10,6 +10,10 @@ img {
     width: 12px;
 }
 
+body {
+    margin-left: 100px;
+}
+
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
