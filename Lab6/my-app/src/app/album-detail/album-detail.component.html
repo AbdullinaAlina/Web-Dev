@@ -1,0 +1,15 @@
+<!-- album-detail.component.html -->
+<div *ngIf="album">
+    <h2>Album Details</h2>
+    <h2>{{album.title}}</h2>
+    <h3>Id: {{album.id}}</h3>
+    <p><a routerLink="/albums/{{album.id}}/photos">Photos</a></p>
+
+    <div>
+        <label>Edit title:</label>
+        <input type="text" [(ngModel)]="editedTitle">
+        <button (click)="updateAlbumTitle(album.id)">Update title</button>
+
+    </div>
+    <!-- You can display other album details here -->
+</div>
