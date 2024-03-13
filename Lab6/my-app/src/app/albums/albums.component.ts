@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumsService } from '../albums.service';
+import { Observable } from "rxjs";
+import { Album } from '../album';
+
 
 @Component({
   selector: 'app-albums',
@@ -8,6 +11,12 @@ import { AlbumsService } from '../albums.service';
 })
 export class AlbumsComponent implements OnInit {
   albums: any[] = [];
+  newAlbum: Album = {
+    userId: 0,
+    id: 0,
+    title: "",
+  };
+
   constructor(private albumsService: AlbumsService) { }
   editedTitle: string = "";
 
@@ -18,12 +27,15 @@ export class AlbumsComponent implements OnInit {
       });
   }
 
-  deleteAlbum(id: number): void {
-    // Simulate deletion by filtering out the album with the given id
-    this.albums = this.albums.filter(album => album.id !== id);
+  addAlbum() {
+    this.albumsService.addAlbum(this.newAlbum).subscribe((album) => { this.albums.push(album); });
+    this.newAlbum = {} as Album;
   }
 
 
-
+  deleteAlbum(id: number): void {
+    this.albumsService.deleteAlbum(id).subscribe();
+    this.albums = this.albums.filter(album => album.id !== id);
+  }
 
 }

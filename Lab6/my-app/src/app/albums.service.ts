@@ -32,8 +32,12 @@ export class AlbumsService {
     return this.http.get<Photo[]>(`${this.albumsUrl}/${id}/photos`)
   }
 
+  addAlbum(album: Album): Observable<Album> {
+    return this.http.post<Album>(`${this.albumsUrl}`, album);
+  }
 
-
-
+  deleteAlbum(id: number): Observable<unknown> {
+    return this.http.delete(`${this.albumsUrl}${id}`);
+  }
 
 }
