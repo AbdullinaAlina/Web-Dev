@@ -1,9 +1,15 @@
 Lab1/
 Lab2/
 Lab3/
-Lab4/
+Lab4/my-app/node_modules/
+Lab4/.idea/
+Lab4/my-app/.vscode/
+Lab4/my-app/.angular/
+Lab4/.vscode/
 Lab5/my-app/node_modules/
 Lab5/.idea/
 Lab5/my-app/.vscode/
 Lab5/my-app/.angular/
+Lab5/my-app/src/.DS_Store
 Lab5/.vscode/
+Lab5/
