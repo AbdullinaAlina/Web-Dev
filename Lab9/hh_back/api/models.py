@@ -22,3 +22,7 @@ class Vacancy(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        verbose_name = "vacancy"
+        verbose_name_plural = "vacancies"
+    
