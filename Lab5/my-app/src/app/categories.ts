@@ -1,7 +1,7 @@
 export interface Category {
     name: string;
     id: number;
-    isSelected: boolean;
+    isSelected: boolean; // later
 }
 
 export const categories = [

@@ -28,7 +28,7 @@
 
     <app-product-alerts [product]="product" (notify)="onNotify()">
     </app-product-alerts>
-    <input type="checkbox" (change)="toggleFavorite(product)">Избранное
+    <input type="checkbox" [(ngModel)]="product.isLiked" (change)="toggleFavorite(product)">Избранное
     <button type="button" (click)="removeProduct(product)">
       Удалить
     </button>
